@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Markdown Table Generator</title>
+</head>
+<body>
+    <h2>Hello! Welcome to this Markdown Table Generator!</h2>
+    <p>To generate a table in Markdown format, insert your information into the table below and press the generate
+         button.</p>
+
+    <br><br>
+
+    <button id="addColumn">Add a column</button>
+    <button id="addRow">Add a row</button>
+    <br>
+    <button id="deleteColumn">Delete a column</button>
+    <button id="deleteRow">Delete a row</button>
+
+    <br><br>
+
+    <table>
+        <thead id="tableHeads">
+        <tr>
+            <th class="th1"><input></th>
+            <th class="th2"><input></th>
+            <th class="th3"><input></th>
+        </tr>
+        </thead>
+
+        <tbody id="tableRows">
+        <tr id="tr1">
+            <td class="th1"><input></td>
+            <td class="th2"><input></td>
+            <td class="th3"><input></td>
+        </tr>
+        <tr id="tr2">
+            <td class="th1"><input></td>
+            <td class="th2"><input></td>
+            <td class="th3"><input></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <button id="generate">Generate</button>
+
+    <script src="index.js"></script>
+</body>
+</html>
