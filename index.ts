@@ -77,3 +77,38 @@ deleteRowButton!.addEventListener("click", function () {
         lastRow.remove();
     }
 })
+
+// Functionality for generating
+const generateButton: HTMLButtonElement = document.getElementById("generate") as HTMLButtonElement;
+
+generateButton!.addEventListener("click", function () {
+    let markdownText: string = "|";
+
+    // Convert headers
+    const headCount = document.querySelectorAll("#tableHeads th").length;
+
+    document.querySelectorAll("#tableHeads input").forEach(input => {
+        // @ts-ignore
+        markdownText += " " + input.value + " |"
+    });
+
+    markdownText += "\n|"
+
+    for(let i: number = 0; i < headCount; i++) {
+        markdownText += " --- |"
+    }
+
+    // Convert rows
+    const rows = document.querySelectorAll("#tableRows tr");
+
+    rows.forEach(row => {
+        markdownText += "\n|"
+        const inputs = row.querySelectorAll("input");
+
+        inputs.forEach(input => {
+            markdownText += " " + input.value + " |"
+        });
+    });
+
+    console.log(markdownText);
+})
