@@ -1,3 +1,5 @@
+declare const marked: any;
+
 // Functionality for adding a column
 const addColumnButton: HTMLButtonElement = document.getElementById("addColumn") as HTMLButtonElement;
 
@@ -79,6 +81,11 @@ deleteRowButton!.addEventListener("click", function () {
 })
 
 // Functionality for generating
+function updatePreview(markdown: string) {
+    const preview = document.getElementById("preview");
+    preview!.innerHTML = marked.parse(markdown);
+}
+
 const generateButton: HTMLButtonElement = document.getElementById("generate") as HTMLButtonElement;
 
 generateButton!.addEventListener("click", function () {
@@ -114,4 +121,6 @@ generateButton!.addEventListener("click", function () {
     const codeBlock: HTMLElement = document.getElementById("codeBlock") as HTMLElement;
 
     codeBlock.innerText = markdownText;
+
+    updatePreview(markdownText);
 })

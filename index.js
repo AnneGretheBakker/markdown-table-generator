@@ -61,6 +61,10 @@ deleteRowButton.addEventListener("click", function () {
     }
 });
 // Functionality for generating
+function updatePreview(markdown) {
+    const preview = document.getElementById("preview");
+    preview.innerHTML = marked.parse(markdown);
+}
 const generateButton = document.getElementById("generate");
 generateButton.addEventListener("click", function () {
     let markdownText = "|";
@@ -86,4 +90,5 @@ generateButton.addEventListener("click", function () {
     // Insert into code block
     const codeBlock = document.getElementById("codeBlock");
     codeBlock.innerText = markdownText;
+    updatePreview(markdownText);
 });
