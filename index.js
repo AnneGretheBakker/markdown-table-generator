@@ -83,5 +83,7 @@ generateButton.addEventListener("click", function () {
             markdownText += " " + input.value + " |";
         });
     });
-    console.log(markdownText);
+    // Insert into code block
+    const codeBlock = document.getElementById("codeBlock");
+    codeBlock.innerText = markdownText;
 });

@@ -110,5 +110,8 @@ generateButton!.addEventListener("click", function () {
         });
     });
 
-    console.log(markdownText);
+    // Insert into code block
+    const codeBlock: HTMLElement = document.getElementById("codeBlock") as HTMLElement;
+
+    codeBlock.innerText = markdownText;
 })
