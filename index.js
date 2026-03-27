@@ -92,3 +92,12 @@ generateButton.addEventListener("click", function () {
     codeBlock.innerText = markdownText;
     updatePreview(markdownText);
 });
+// Functionality for copying code
+const copyButton = document.getElementById("copy");
+copyButton.addEventListener("click", function () {
+    console.log("click!");
+    // @ts-ignore
+    const copyText = document.getElementById("codeBlock").innerText;
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText).then(r => console.log("copied!"));
+});

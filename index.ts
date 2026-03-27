@@ -124,3 +124,15 @@ generateButton!.addEventListener("click", function () {
 
     updatePreview(markdownText);
 })
+
+// Functionality for copying code
+const copyButton: HTMLButtonElement = document.getElementById("copy") as HTMLButtonElement;
+
+copyButton!.addEventListener("click", function () {
+    console.log("click!")
+    // @ts-ignore
+    const copyText = document.getElementById("codeBlock").innerText;
+
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText).then(r => console.log("copied!"));
+})
